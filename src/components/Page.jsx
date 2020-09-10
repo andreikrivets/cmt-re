@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import uniqid from "uniqid";
 
-import Entry from "./Entry";
+import Entry from "./entry/Entry";
 import getData from "../data/getData";
 
 const Page = ({ site }) => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 
 import "./entry.css";
-import getRandomImage from "../data/getRandomImage";
+import getRandomImage from "../../data/getRandomImage";
 
 const Entry = ({ dat }) => {
   const [imageURL, setImageURL] = useState("");
