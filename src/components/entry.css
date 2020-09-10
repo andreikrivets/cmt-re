@@ -1,0 +1,78 @@
+@keyframes bgMove {
+    0% {
+        background-position-y: top
+    }
+    100% { 
+        background-position-y: bottom;
+    }
+ }
+
+.card {
+    margin: 2% 0;
+    height: 200px;
+    filter: grayscale(80%);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    background-position-y: top;
+}
+
+.card:hover {
+    filter: none;
+}
+
+.container {
+    width: 100%;
+    position: absolute;
+    height: 400px;
+    background-size: cover;
+    padding: 2%;
+    text-align: center;
+}
+
+.container:hover {
+    animation: 5s linear 1 bgMove
+}
+
+.wrapper {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    text-align: center;
+    text-decoration: none;
+    color: rgba(4, 74, 60, 1);
+    font-weight: bold;
+    font-size: 2vh;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.header:hover {
+    color: rgb(2, 92, 72);
+    background: rgba(255, 255, 255, 0.3);;
+}
+
+.descr {
+    background: rgba(255, 255, 255, 0.9);
+    color: rgba(2, 41, 33, 1);
+    font-size: 1.6vh;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5vh;
+}
+
+.info-obj {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.info-name {
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.9);
+}

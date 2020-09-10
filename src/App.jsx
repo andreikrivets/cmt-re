@@ -7,7 +7,7 @@ import Page from "./components/Page";
 const tabStyle = { position: "relative", top: "30px" };
 
 const App = () => (
-  <Container fluid="md">
+  <Container fluid="sm">
     <Tabs
       defaultActiveKey="tj"
       style={{
