@@ -1,15 +1,44 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 
+import getRandomImage from "../data/getRandomImage";
+
 const Entry = ({ dat }) => {
+  const [imageURL, setImageURL] = useState("");
+  const [hover, setHover] = useState(false);
   const ind = dat.description.indexOf("<");
   const descr = ind ? dat.description.slice(0, ind) : dat.description;
+  const firstSentIndex = descr.indexOf(".");
+  const firstSent = descr.slice(0, firstSentIndex + 1) || descr;
+
+  useEffect(() => {
+    const getImageURL = async () => {
+      const req = await getRandomImage();
+      setImageURL(req);
+    };
+    getImageURL();
+  }, []);
+
+  const position = dat.thumbnail ? "top" : "center";
+
   return (
-    <Card style={{ margin: "2% 0", height: "200px" }}>
+    <Card
+      style={{
+        margin: "2% 0",
+        height: "200px",
+        filter: hover ? "none" : "grayscale(80%)",
+      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
       <div
         style={{
           height: "200px",
-          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(184, 219, 255, 0.3)), url(${dat.thumbnail})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(184, 219, 255, 0.3)), url(${
+            dat.thumbnail || imageURL
+          })`,
+          backgroundPosition: `${position}`,
           backgroundSize: "cover",
           padding: "2%",
           display: "flex",
@@ -44,7 +73,7 @@ const Entry = ({ dat }) => {
             fontSize: "1.6vh",
           }}
         >
-          {descr.length > 100 ? `${descr.slice(0, 100)}...` : descr}
+          {firstSent}
         </p>
         <div
           style={{

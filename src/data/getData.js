@@ -9,7 +9,6 @@ const getData = async (site) => {
   const currentSite = urls[+site];
   const res = await fetch(`${url}${currentSite}`);
   const json = await res.json();
-  console.log(json);
   return json;
 };
 
