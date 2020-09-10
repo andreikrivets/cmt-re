@@ -7,7 +7,7 @@ import Page from "./components/Page";
 const App = () => (
   <Container fluid="md">
     <Tabs
-      defaultActiveKey="home"
+      defaultActiveKey="tj"
       style={{ display: "flex", justifyContent: "space-evenly" }}
     >
       <Tab eventKey="tj" title="TJ">

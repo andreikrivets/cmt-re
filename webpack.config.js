@@ -23,13 +23,8 @@ const config = {
         },
       },
       {
-        test: /\.css$/,
-        use: [
-            {loader: 'style-loader'},
-            {loader: 'css-loader',
-            options: { url: false }
-            },
-        ]
+        test: /\.(css|scss)$/,
+        loader: 'style-loader!css-loader!sass-loader'
       },
       {
         enforce: 'pre',
@@ -44,7 +39,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'kram',
+      title: 'ne ws',
       template: 'index.html'
     }),
   ]
