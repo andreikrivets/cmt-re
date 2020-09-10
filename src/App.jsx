@@ -11,7 +11,7 @@ const App = () => (
     <Tabs
       defaultActiveKey="tj"
       style={{
-        position: "fixed",
+        position: "sticky",
         top: "0",
         zIndex: "10",
         background: "white",

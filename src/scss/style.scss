@@ -3,3 +3,12 @@
 body {
     font-family: 'Bellota Text', cursive
 }
+
+@keyframes MoveBackground {
+    0% {
+        background-position-y: top
+    }
+    100% { 
+        background-position-y: bottom;
+    }
+ }
