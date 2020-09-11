@@ -3,10 +3,12 @@ import { Card } from "react-bootstrap";
 
 import "./entry.css";
 import getRandomImage from "../../data/getRandomImage";
+import ModalWindow from "../Modal";
 
-const Entry = ({ dat }) => {
+const Entry = ({ dat, site }) => {
   const [imageURL, setImageURL] = useState("");
   const [hover, setHover] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const ind = dat.description.indexOf("<");
   const descr = ind ? dat.description.slice(0, ind) : dat.description;
   const firstSentIndex = descr.indexOf(".");
@@ -41,14 +43,16 @@ const Entry = ({ dat }) => {
         }}
       >
         <div className="wrapper">
-          <a
+          <button
+            type="button"
             href={dat.link}
             target="_blank"
             rel="noreferrer"
             className="header"
+            onClick={() => setModalShow(true)}
           >
             <h5>{dat.title}</h5>
-          </a>
+          </button>
           <p className="descr">{firstSent}</p>
           <div className="info">
             <p className="info-obj">
@@ -58,6 +62,13 @@ const Entry = ({ dat }) => {
           </div>
         </div>
       </div>
+      <ModalWindow
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        id={dat.guid}
+        site={site}
+        cover={dat.thumbnail || imageURL}
+      />
     </Card>
   );
 };

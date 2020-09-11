@@ -32,7 +32,7 @@ const Page = ({ site }) => {
   return (
     <>
       {data.items.map((el) => (
-        <Entry key={uniqid()} dat={el} />
+        <Entry key={uniqid()} dat={el} site={site} />
       ))}
     </>
   );
