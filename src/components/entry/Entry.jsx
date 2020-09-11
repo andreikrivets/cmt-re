@@ -23,7 +23,9 @@ const Entry = ({ dat }) => {
   return (
     <Card
       onMouseEnter={() => setHover(true)}
+      onPointerEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onPointerLeave={() => setHover(false)}
       style={{
         filter: hover ? "none" : "grayscale(80%)",
       }}
