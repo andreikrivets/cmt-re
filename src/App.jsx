@@ -4,7 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Page from "./components/Page";
 
-const tabStyle = { position: "relative", top: "30px" };
+const tabStyle = {
+  position: "relative",
+  top: "20px",
+};
 
 const App = () => (
   <Container fluid="sm">

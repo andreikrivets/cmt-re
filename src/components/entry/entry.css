@@ -10,14 +10,9 @@
 .card {
     margin: 2% 0;
     height: 200px;
-    filter: grayscale(80%);
     overflow: hidden;
     transition: all 0.5s ease;
     background-position-y: top;
-}
-
-.card:hover {
-    filter: none;
 }
 
 .container {
@@ -27,10 +22,6 @@
     background-size: cover;
     padding: 2%;
     text-align: center;
-}
-
-.container:hover {
-    animation: 5s linear 1 bgMove
 }
 
 .wrapper {
@@ -52,7 +43,11 @@
 
 .header:hover {
     color: rgb(2, 92, 72);
-    background: rgba(255, 255, 255, 0.3);;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.header h5 {
+    display: inline;
 }
 
 .descr {

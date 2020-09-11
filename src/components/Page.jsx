@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import uniqid from "uniqid";
+import { Spinner } from "react-bootstrap";
 
 import Entry from "./entry/Entry";
 import getData from "../data/getData";
@@ -14,7 +16,19 @@ const Page = ({ site }) => {
     fetchData();
   }, []);
 
-  if (!data) return null;
+  if (!data)
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Spinner
+          animation="grow"
+          role="status"
+          variant="primary"
+          style={{ marginTop: "200px" }}
+        >
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </div>
+    );
   return (
     <>
       {data.items.map((el) => (
