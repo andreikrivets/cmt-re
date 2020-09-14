@@ -10,7 +10,7 @@
 .card {
     margin: 2% 0;
     height: 200px;
-    overflow: hidden;
+    overflow-y: hidden;
     transition: all 0.5s ease;
     background-position-y: top;
 }

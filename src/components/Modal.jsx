@@ -32,13 +32,13 @@ const ModalWindow = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {
+        {cover ? (
           <img
             src={`${cover}`}
             alt="img"
             style={{ width: "39vh", float: "left", margin: "5px" }}
           />
-        }
+        ) : null}
         {full.blocks.map((el) => (
           <ReactMarkdown
             key={uniqid()}

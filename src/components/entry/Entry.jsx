@@ -67,7 +67,7 @@ const Entry = ({ dat, site }) => {
         onHide={() => setModalShow(false)}
         id={dat.guid}
         site={site}
-        cover={dat.thumbnail || imageURL}
+        cover={dat.thumbnail || ""}
       />
     </Card>
   );
