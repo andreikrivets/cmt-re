@@ -1,6 +1,6 @@
 {
   "name": "cmtt-reader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "simple tj/vc/dtf rss-based reader",
   "main": "index.js",
   "scripts": {
