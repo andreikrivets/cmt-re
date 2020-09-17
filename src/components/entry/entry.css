@@ -1,0 +1,72 @@
+@keyframes bgMove {
+    0% {
+        background-position-y: top
+    }
+    100% { 
+        background-position-y: bottom;
+    }
+ }
+
+.card {
+    margin: 2% 0;
+    height: 200px;
+    overflow-y: hidden;
+    transition: all 0.5s ease;
+    background-position-y: top;
+}
+
+.container {
+    width: 100%;
+    position: absolute;
+    height: 400px;
+    background-size: cover;
+    padding: 2%;
+    text-align: center;
+}
+
+.wrapper {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    color: rgba(4, 74, 60, 1);
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+}
+
+.header:hover {
+    color: rgb(2, 92, 72);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.header h5 {
+    display: inline;
+    font-size: 2vh
+}
+
+.descr {
+    background: rgba(255, 255, 255, 0.9);
+    color: rgba(2, 41, 33, 1);
+    font-size: 1.6vh;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5vh;
+}
+
+.info-obj {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.info-name {
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.9);
+}
