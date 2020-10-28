@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import uniqid from "uniqid";
 import ReactMarkdown from "react-markdown";
 
 import getFull from "../data/getFull";
 
 const ModalWindow = (props) => {
-  const { onHide, id, site, cover } = props;
+  const { id, site, cover } = props;
   const [full, setFull] = useState({});
   useEffect(() => {
     const fetchFull = async () => {
@@ -47,9 +47,6 @@ const ModalWindow = (props) => {
           />
         ))}
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={onHide}>закрыть</Button>
-      </Modal.Footer>
     </Modal>
   );
 };
