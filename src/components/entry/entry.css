@@ -13,6 +13,7 @@
     overflow-y: hidden;
     transition: all 0.5s ease;
     background-position-y: top;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .container {
@@ -37,11 +38,6 @@
     font-weight: bold;
     background: rgba(255, 255, 255, 0.9);
     border: none;
-}
-
-.header:hover {
-    color: rgb(2, 92, 72);
-    background: rgba(255, 255, 255, 0.3);
 }
 
 .header h5 {
