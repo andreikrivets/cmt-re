@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import uniqid from "uniqid";
 import { Spinner } from "react-bootstrap";
