@@ -4,32 +4,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Page from "./components/Page";
 
-const tabStyle = {
-  position: "relative",
-  top: "20px",
-};
-
 const App = () => (
   <Container fluid="sm">
-    <Tabs
-      defaultActiveKey="tj"
-      style={{
-        position: "sticky",
-        top: "0",
-        zIndex: "10",
-        background: "white",
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-evenly",
-      }}
-    >
-      <Tab eventKey="tj" title="TJ" style={tabStyle}>
+    <Tabs defaultActiveKey="tj">
+      <Tab eventKey="tj" title="TJ">
         <Page site="0" />
       </Tab>
-      <Tab eventKey="vc" title="VC" style={tabStyle}>
+      <Tab eventKey="vc" title="VC">
         <Page site="1" />
       </Tab>
-      <Tab eventKey="dtf" title="DTF" style={tabStyle}>
+      <Tab eventKey="dtf" title="DTF">
         <Page site="2" />
       </Tab>
     </Tabs>

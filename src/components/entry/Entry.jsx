@@ -7,7 +7,7 @@ import ModalWindow from "../Modal";
 
 const Entry = ({ dat, site }) => {
   const [imageURL, setImageURL] = useState("");
-  const [hover, setHover] = useState(false);
+  // const [hover, setHover] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const ind = dat.description.indexOf("<");
   const descr = ind ? dat.description.slice(0, ind) : dat.description;
@@ -24,22 +24,24 @@ const Entry = ({ dat, site }) => {
 
   return (
     <Card
-      onMouseEnter={() => setHover(true)}
-      onPointerEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      onPointerLeave={() => setHover(false)}
-      style={{
-        filter: hover ? "none" : "grayscale(80%)",
-      }}
+      // onMouseEnter={() => setHover(true)}
+      // onPointerEnter={() => setHover(true)}
+      // onMouseLeave={() => setHover(false)}
+      // onPointerLeave={() => setHover(false)}
+      style={
+        {
+          // filter: hover ? "none" : "grayscale(90%)",
+        }
+      }
     >
       <div
         className="container"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(184, 219, 255, 0.3)), url(${
+          backgroundImage: `linear-gradient(0deg, rgba(0,142,255,1) 0%, rgba(89,0,254,0.7) 0%, rgba(255,76,0,0.7) 100%), url(${
             dat.thumbnail || imageURL
           })`,
-          backgroundPositionY: hover ? "bottom" : "top",
-          animation: hover ? "5s ease-out 1 bgMove" : "none",
+          // backgroundPositionY: hover ? "bottom" : "top",
+          // animation: hover ? "5s ease-out 1 bgMove" : "none",
         }}
       >
         <div className="wrapper">
