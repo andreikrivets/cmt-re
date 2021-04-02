@@ -8,3 +8,21 @@ body {
 h1, h2, h3, h4, h5 {
     font-family: 'Ruda', sans-serif;
 }
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.nav-link {
+    position: relative;
+    color: darkred;
+    text-decoration: none;
+}
+
