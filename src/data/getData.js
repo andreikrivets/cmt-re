@@ -1,15 +1,14 @@
 const url = "https://api.rss2json.com/v1/api.json?rss_url=";
+const urls = [
+  "https%3A%2F%2Ftjournal.ru%2Frss%2F",
+  "https%3A%2F%2Fvc.ru%2Frss%2F",
+  "https%3A%2F%2Fdtf.ru%2Frss%2F",
+];
 
-const getData = async (site) => {
-  const urls = [
-    "https%3A%2F%2Ftjournal.ru%2Frss%2F",
-    "https%3A%2F%2Fvc.ru%2Frss%2F",
-    "https%3A%2F%2Fdtf.ru%2Frss%2F",
-  ];
-  const currentSite = urls[+site];
-  const res = await fetch(`${url}${currentSite}`);
-  const json = await res.json();
-  return json;
+const fetchData = (site = 0) => {
+  return fetch(`${url}${urls[site]}`)
+    .then((res) => res.json())
+    .then((json) => json);
 };
 
-export default getData;
+export default fetchData;

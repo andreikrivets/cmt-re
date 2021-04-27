@@ -7,12 +7,21 @@ import getData from "../data/getData";
 
 const Page = ({ site }) => {
   const [data, setData] = useState();
+
   useEffect(() => {
-    const fetchData = async () => {
-      const req = await getData(site);
-      setData(req);
+    let cleanupFunction = false;
+    const fetch = async () => {
+      try {
+        getData(site).then((req) => {
+          if (!cleanupFunction) setData(req);
+        });
+      } catch (e) {
+        // console.error(e)
+      }
     };
-    fetchData();
+    fetch();
+    // eslint-disable-next-line no-return-assign
+    return () => (cleanupFunction = true);
   }, []);
 
   if (!data)
